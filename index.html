@@ -46,10 +46,6 @@
     personalMessage:
       "[]",
 
-    // A meaningful quote and, optionally, who it's attributed to.
-    quote: "[Write your favorite quote here.]",
-    quoteAuthor: "[Attribution, optional]",
-
     // Ending section text.
     endingTitle: "Thank you for everything.",
     endingText: "I'll always be grateful for everything you've done for me.",
@@ -457,30 +453,6 @@
     padding: 1rem;
   }
 
-  /* ============================== QUOTE ============================== */
-  .quote-section{ text-align:center; }
-  .quote-mark{
-    font-family: var(--serif);
-    font-size: 4rem;
-    color: var(--gold);
-    opacity: 0.5;
-    line-height: 1;
-  }
-  blockquote{
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(1.3rem, 3vw, 2.1rem);
-    max-width: 780px;
-    margin: 0.8rem auto 1.4rem;
-    color: var(--white);
-  }
-  .quote-author{
-    color: var(--gold);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-size: 0.72rem;
-  }
-
   /* ============================== ENDING ============================== */
   .ending-section{ text-align:center; }
   .ending-section h2{
@@ -604,13 +576,6 @@
 
   <div class="divider reveal"></div>
 
-  <!-- ============================== QUOTE ============================== -->
-  <section class="quote-section" id="quote">
-    <div class="quote-mark reveal">"</div>
-    <blockquote class="reveal" id="quoteText"></blockquote>
-    <div class="quote-author reveal" id="quoteAuthor"></div>
-  </section>
-
   <!-- ============================== ENDING ============================== -->
   <section class="ending-section" id="ending">
     <div class="ending-glow reveal" aria-hidden="true"></div>
@@ -652,10 +617,6 @@
     }
     grid.appendChild(cell);
   });
-
-  // Quote
-  document.getElementById('quoteText').textContent = GIFT_CONTENT.quote;
-  document.getElementById('quoteAuthor').textContent = GIFT_CONTENT.quoteAuthor || '';
 
   // Ending
   document.getElementById('endingTitle').textContent = GIFT_CONTENT.endingTitle;
